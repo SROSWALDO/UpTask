@@ -16,6 +16,8 @@ export class ProjectController {
     static CreateProject = async (req: Request, res: Response) => {
         try {
             await Project.create(req.body)
+
+
             res.send('Proyecto creado correctamente')
         } catch (error) {
             console.log(error);

@@ -4,6 +4,7 @@ import { connectDB } from "./config/db";
 import router from "./routes/projectRoutes";
 import { corsConfig } from "./config/cors";
 import cors from 'cors'
+import morgan from "morgan";
 
 dontenv.config()
 
@@ -13,6 +14,8 @@ const app = express()
 
 app.use(cors(corsConfig) )
 
+app.use(morgan('dev'))
+// leer datos de formularios
 app.use(express.json())
 
 //* Routes

@@ -6,6 +6,7 @@ import { createProject } from "../../api/ProjectApi";
 import { toast } from "react-toastify";
 import { useMutation } from "@tanstack/react-query";
 
+
 export default function CreateProject() {
   const navigate = useNavigate();
 
@@ -23,7 +24,9 @@ export default function CreateProject() {
 
   const {mutate} = useMutation({
     mutationFn: createProject,
-    onError: () => {
+    onError: (error) => {
+      toast.error(error.message);
+      
 
     },
     onSuccess: (data) => {

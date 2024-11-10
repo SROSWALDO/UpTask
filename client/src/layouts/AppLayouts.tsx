@@ -1,8 +1,8 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import Logo from "../components/Logo";
 import NavMenu from "../components/NavMenu";
 import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css'
+import "react-toastify/dist/ReactToastify.css";
 
 export default function AppLayouts() {
   return (
@@ -10,7 +10,9 @@ export default function AppLayouts() {
       <header className="bg-gray-800 py-4">
         <div className="max-w-[1350px] mx-auto flex flex-col lg:flex-row justify-between items-center">
           <div className="w-40">
-            <Logo />
+            <Link to="/">
+              <Logo />
+            </Link>
           </div>
 
           <NavMenu />
@@ -25,7 +27,11 @@ export default function AppLayouts() {
           Todos los derechos reservados {new Date().getFullYear()}
         </p>
       </footer>
-      <ToastContainer pauseOnHover={false} pauseOnFocusLoss={false} autoClose={2000} />
+      <ToastContainer
+        pauseOnHover={false}
+        pauseOnFocusLoss={false}
+        autoClose={2000}
+      />
     </>
   );
 }
